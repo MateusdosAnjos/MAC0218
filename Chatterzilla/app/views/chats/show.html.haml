@@ -1,0 +1,6 @@
+%h1.title Bate Papo
+#messages
+  = render @messages
+%form
+  %input{"data-behavior" => "chat_speaker", :placeholder => " Diga alguma coisa :) ", :type => "text"}/
+= link_to "Leave Chat Room", "../users#show" 

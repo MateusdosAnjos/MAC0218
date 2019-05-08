@@ -1,0 +1,22 @@
+- provide(:title, 'All users')
+%body
+  .containerusers
+    .row
+      .col-xs-6.align-self-center
+        %h1 All users  
+        .panel.panel-primary
+          .panel-body
+            = will_paginate
+            %ul.users
+              - @users.each do |user|
+                %li
+                  = gravatar_for user, size: 50
+                  = link_to "Open chat with " + user.login, conversations_path(user_id: user), remote: true, method: :post 
+                  %br/ 
+                  = link_to "Profile", user 
+            = will_paginate
+      .col-xs-9.align-self-start
+        %h1 My conversations
+        %ul.users#conversations-list
+          - @conversations.each do |conversation|
+            = render 'conversations/conversation', conversation: conversation, user: current_user

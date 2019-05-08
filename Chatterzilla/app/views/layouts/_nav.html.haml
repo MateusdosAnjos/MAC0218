@@ -1,0 +1,26 @@
+%header.navbar.navbar-fixed-top.navbar-inverse
+  .container
+    - if logged_in?
+      = link_to "Chatterzilla", users_path, id: "logo"
+    - else
+      = link_to "Chatterzilla", root_path, id: "logo"
+    %nav
+      %ul.nav.navbar-nav.navbar-right
+        - if logged_in?
+          %li= link_to "Home", users_path
+        - else
+          %li= link_to "Home", root_path          
+        - if logged_in?
+          %li= link_to "Users", users_path
+          %li.dropdown
+            %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+              Account
+              %b.caret
+            %ul.dropdown-menu
+              %li= link_to "Profile", current_user
+              %li= link_to "Settings", edit_user_path(current_user)
+              %li.divider
+              %li
+                = link_to "Log out", logout_path, method: :delete
+        - else
+          %li= link_to "Log in", login_path

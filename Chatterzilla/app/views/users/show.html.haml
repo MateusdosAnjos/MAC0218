@@ -1,0 +1,14 @@
+%body
+  .container
+    .row.align-items-center
+      .col.align-self-center
+        %h1 User profile
+    .row
+      .col-xs-6.align-self-center
+        %p
+          = @user.login
+        %p 
+          = @user.email
+      .col-xs-6.align-self-center
+        = gravatar_for @user
+    = link_to "Go to Chat Room!", "../chats/show"  

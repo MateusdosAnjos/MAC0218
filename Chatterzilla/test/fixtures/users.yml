@@ -1,0 +1,14 @@
+mateus:
+  login: Mateus Anjos
+  email: mateus@gmail.com
+  password: senha123
+
+zetum:
+  login: Nicolas Nogueira
+  email: nicolasnogueira@gmail.com
+  password: senhadozetum
+
+fritz:
+  login: Victor Domiciano
+  email: victordomiciano@gmail.com
+  password: senhadofritz

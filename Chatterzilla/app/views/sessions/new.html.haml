@@ -1,0 +1,21 @@
+%html
+  %body.backgroundbody
+    .container
+      .content
+        .row.align-items-center
+          .col-xs-6.align-self-center
+            %p
+              %h1 Welcome to <br> <strong> Chatterzilla </strong>!!!
+              %figure
+                =image_tag "Godzillazoom.jpg", class: 'godzillaimg img-circle'
+          .col-xs-6.colorbox
+            = form_for(:session, url: login_path) do |f|
+              = f.label :login
+              = f.text_field :login, class: 'form-control'
+              = f.label :email
+              = f.email_field :email, class: 'form-control'
+              = f.label :password
+              = f.password_field :password, class: 'form-control'
+              = f.submit "Log in", class: "btn btn-primary"
+            %p
+              New user? #{link_to "Sign up now!", signup_path}
